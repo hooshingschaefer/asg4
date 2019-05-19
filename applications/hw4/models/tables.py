@@ -9,7 +9,8 @@
 
 
 db.define_table('r_products', Field('f_name', label='name'), 
-	Field('f_description', label='description'), Field('f_price', label='price', type='double'))
+						      Field('f_description', label='description'), 
+							  Field('f_price', label='price', type='double'))
 
 db.r_products.id.readable = False
 

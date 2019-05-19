@@ -9,9 +9,6 @@
 # -------------------------------------------------------------------------
 
 
-def index():
-    page='hello'
-    return dict(page=page)
 
 
 def user():
@@ -52,7 +49,14 @@ def call():
     return service()
 
 
+#should be finished
 def products():
 	grid = SQLFORM.grid(db.r_products, create=True)
 	return dict(grid=grid)
 
+
+
+
+def index():
+    page='hello'
+    return dict(page=page)

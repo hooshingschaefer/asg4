@@ -13,19 +13,44 @@ var app = function() {
         }
     };
 
+    self.get_products_with_query = function (query) {
+        
+        var req = new XMLHttpRequest();
+        req.open('get', get_products_url + '?query=' + query);
+        req.send();
+        req.responseType = 'json';
+        req.onload = function () {
+            self.vue.product_list = req.response.product_list;
+        };
+    };
+
+    self.get_products = function () {
+        var req = new XMLHttpRequest();
+        req.open('GET', get_products_url);
+        req.send();
+        req.responseType = 'json';
+        req.onload = function () {
+            self.vue.product_list = req.response.product_list;
+        };
+    };
+
     // Complete as needed.
     self.vue = new Vue({
         el: "#vue-div",
         delimiters: ['${', '}'],
         unsafeDelimiters: ['!{', '}'],
         data: {
+            product_list: [{ f_name: 'sdfsdf' }, { f_name: 'itjhlf' }],
+            f: "sdfsdfsdF"
         },
         methods: {
+            get_products: self.get_products,
+            get_products_with_query : self.get_products_with_query,
         }
 
     });
 
-
+    //self.get_products();
     return self;
 };
 
