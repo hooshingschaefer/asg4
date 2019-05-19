@@ -1,0 +1,15 @@
+{{extend 'layout.html'}}
+
+{{block head}}
+<script src="{{=URL('static', 'js/vue.js')}}"></script>
+<script>
+    var products_retrieve_url = "{{=URL('api','get_products')}}";
+</script>
+{{end}}
+
+<div class="main_content">
+    <div>search: <input type="text"/> </div>
+  
+    <script src="{{=URL('static','js/default_index.js')}}"></script>
+</div>
+
