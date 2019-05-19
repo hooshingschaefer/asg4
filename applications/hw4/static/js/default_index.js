@@ -13,10 +13,10 @@ var app = function() {
         }
     };
 
-    self.get_products_with_query = function (query) {
+    self.get_products_with_query = function () {
         
         var req = new XMLHttpRequest();
-        req.open('get', get_products_url + '?query=' + query);
+        req.open('get', get_products_url + '?query=' + self.vue.query);
         req.send();
         req.responseType = 'json';
         req.onload = function () {
@@ -40,8 +40,8 @@ var app = function() {
         delimiters: ['${', '}'],
         unsafeDelimiters: ['!{', '}'],
         data: {
-            product_list: [{ f_name: 'sdfsdf' }, { f_name: 'itjhlf' }],
-            f: "sdfsdfsdF"
+            product_list: [],
+            query: "sdfsdfsdF"
         },
         methods: {
             get_products: self.get_products,
@@ -50,7 +50,7 @@ var app = function() {
 
     });
 
-    //self.get_products();
+    self.get_products();
     return self;
 };
 

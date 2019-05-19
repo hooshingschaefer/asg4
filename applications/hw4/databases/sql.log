@@ -72,3 +72,11 @@ CREATE TABLE "r_products"(
     "f_price" DOUBLE
 );
 success!
+timestamp: 2019-05-19T14:33:50.495003
+CREATE TABLE "r_reviews"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "f_productid" INTEGER REFERENCES "r_products" ("id") ON DELETE CASCADE  ,
+    "f_rating" INTEGER,
+    "f_text" TEXT
+);
+success!

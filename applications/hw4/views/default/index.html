@@ -8,7 +8,7 @@
 {{end}}
 
 <div id="vue-div">
-    <div>search: <input type="text"  v-on:change="get_products" /> </div>
+    <div>search: <input type="text" v-model="query" v-on:input="get_products_with_query" /> </div>
     <div >
         <div v-for="product in product_list">
             ${product.f_name }
@@ -16,7 +16,7 @@
             
         </div>
     </div>
-    ${f}
+    
 </div>
 
 <script src="{{=URL('static','js/default_index.js')}}"></script>
