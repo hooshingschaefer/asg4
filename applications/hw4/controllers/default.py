@@ -59,4 +59,5 @@ def products():
 
 def index():
     page='hello'
-    return dict(page=page)
+    return 'bob'
+	#dict(page=page)

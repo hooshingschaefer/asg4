@@ -1,11 +1,22 @@
 {{extend 'layout.html'}}
 
 {{block head}}
+<script src="{{=URL('static', 'js/vue.js')}}"></script>
+<script>
+    var get_products_url = "{{=URL('api','get_products')}}";
+</script>
 {{end}}
 
-<div class="main_content">
-
-  <!-- Here goes your main HTML code. -->
-
+<div id="vue-div">
+    <div>search: <input type="text" v-model="query" v-on:input="get_products_with_query" /> </div>
+    <div >
+        <div v-for="product in product_list">
+            ${product.f_name }
+            
+            
+        </div>
+    </div>
+    
 </div>
 
+<script src="{{=URL('static','js/default_index.js')}}"></script>

@@ -58,4 +58,9 @@ def call():
     """
     return service()
 
+def products():
+	grid = SQLFORM.grid(db.r_products, create=True)
+	return dict(grid=grid)
 
+def index():
+	return dict(page='dfgjk')
